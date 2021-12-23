@@ -21,8 +21,8 @@
       <pre>
 
         <h2>   Registrar Tarea</h2>
-        Nombre  <input type="text" placeholder="nombre curso" name="nombre"><br>
-        Contenido <input type="text" placeholder="contenido" name="contenido"><br>
+        Titulo  <input type="text" placeholder="nombre curso" name="nombre"><br>
+        Contenido <textarea name="contenido"></textarea><br>
         Fecha de Registro <input type="date" name= "fecha_registro"><br>
         Fecha de Vencimiento <input type="date" name= "fecha_vencimiento"><br>
         <input  type="submit" value="INGRESAR NUEVO REGISTRO" name="enviar">
