@@ -23,7 +23,7 @@ $id_usuario =$_SESSION['id_usuario'];
 <table border="1" cellspacing="0" cellpadding="3" >
 <thead>
 	<tr>
-		<th><b>Nombre Curso</b></th>
+		<th><b>Titulo</b></th>
         <th><b>Contenido</b></th>
         <th><b>Fecha de Registro</b></th>
         <th><b>Fecha de Vencimiento</b></th>
