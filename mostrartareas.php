@@ -58,13 +58,18 @@ while($row = mysqli_fetch_array($result)){ ?>
 		<?php
 
       $fechaactual=date('Y-m-d');
-		if($row['fecha_vencimiento'] < $fechaactual and ($row['estado']=='en proceso' or $row['estado']=='' ))
+	if($row['fecha_vencimiento'] <= $fechaactual)
+        {   
+             echo "<b><FONT COLOR=red>Vencido</FONT></b>(no puedes editar esta tarea)";
+             
+             $query = "UPDATE tareas SET estado='vencido' WHERE (estado ='' or estado ='en proceso') and fecha_vencimiento<=$fechaactual  ";
+              $resultado = mysqli_query($conexion, $query);
 
-		  { echo "<b><FONT COLOR=red>Vencido</FONT></b>(no puedes editar esta tarea)"; }
+	 }
 
-		else if($row['estado']=='terminado')
+	else if($row['estado']=='terminado')
 
-		  { echo "<b><FONT COLOR=blue>Terminado</FONT></b>";}
+	 { echo "<b><FONT COLOR=blue>Terminado</FONT></b>";}
 
         else {
          $firstDate  = new DateTime($row['fecha_vencimiento']);
