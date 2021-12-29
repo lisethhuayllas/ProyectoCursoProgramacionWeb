@@ -32,8 +32,9 @@
        
         <a href='archivar.php'><input  type="button" value="Ver tareas archivadas"></a>
 
-        <a href='mostrartareas.php'><input type="button" value="Ver tareas pendientes"></a>
+        <a href='pendientes.php'><input type="button" value="Ver tareas pendientes"></a>
 
+        <a href='vencidas.php'><input type="button" value="Ver tareas vencidas"></a>
 
      </pre> 
     </form>
@@ -47,7 +48,7 @@ if(isset($_POST['enviar']))
       $contenido=$_POST['contenido'];
       $fr=$_POST['fecha_registro'];
       $fv=$_POST['fecha_vencimiento'];
-     
+      $estado=$_POST['estado'];
 
       if( $nombre=="" || $contenido=="" || $fr=="" || $fv=="" )
       {
@@ -55,7 +56,7 @@ if(isset($_POST['enviar']))
       }
       else{
 
-      $conexion->query("INSERT INTO tareas( id_usuario, nombre,contenido,fecha_registro, fecha_vencimiento) values ( '$id_usuario','$nombre','$contenido','$fr', '$fv')");
+      $conexion->query("INSERT INTO tareas( id_usuario, nombre,contenido,fecha_registro, fecha_vencimiento, estado) values ( '$id_usuario','$nombre','$contenido','$fr', '$fv', 'en proceso' )");
       echo"Se ha registrado la nueva tarea";
         }
 
